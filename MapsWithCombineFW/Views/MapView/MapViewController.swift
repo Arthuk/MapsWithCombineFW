@@ -38,16 +38,10 @@ final class MapViewController: UIViewController {
                          forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
         
         subscribeForConnectionEstablishment()
-        
-        #if DEBUG
-        mapViewModel.simulateUserListEmit()
-        mapViewModel.simulateLocationUpdateEmit()
-        #else
+        subscribeForUserLocationUpdates()
+
         mapViewModel.connect()
         mapViewModel.authorize(byEmail: "arturs.maksimovics@gmail.com")
-        #endif
-        
-        subscribeForUserLocationUpdates()
     }
     
     //MARK: - Private Methods

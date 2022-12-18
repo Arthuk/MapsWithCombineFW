@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		51A97B77294F36E800939E19 /* TCPCommunicatorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A97B76294F36E800939E19 /* TCPCommunicatorMock.swift */; };
 		51B7619F2924FF35005243C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B7619E2924FF35005243C1 /* AppDelegate.swift */; };
 		51B761A12924FF35005243C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B761A02924FF35005243C1 /* SceneDelegate.swift */; };
 		51B761A62924FF35005243C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51B761A42924FF35005243C1 /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		51A97B76294F36E800939E19 /* TCPCommunicatorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCPCommunicatorMock.swift; sourceTree = "<group>"; };
 		51B7619B2924FF35005243C1 /* MapsWithCombineFW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapsWithCombineFW.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51B7619E2924FF35005243C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51B761A02924FF35005243C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 			children = (
 				51B761EC2925014A005243C1 /* ConnectionManager.swift */,
 				51B761ED2925014A005243C1 /* TCPCommunicator.swift */,
+				51A97B76294F36E800939E19 /* TCPCommunicatorMock.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				51B761EF2925014A005243C1 /* TCPCommunicator.swift in Sources */,
 				51B7619F2924FF35005243C1 /* AppDelegate.swift in Sources */,
 				51B761A12924FF35005243C1 /* SceneDelegate.swift in Sources */,
+				51A97B77294F36E800939E19 /* TCPCommunicatorMock.swift in Sources */,
 				51B761EE2925014A005243C1 /* ConnectionManager.swift in Sources */,
 				51B761F8292501B7005243C1 /* Extensions.swift in Sources */,
 				51B761F229250186005243C1 /* User.swift in Sources */,

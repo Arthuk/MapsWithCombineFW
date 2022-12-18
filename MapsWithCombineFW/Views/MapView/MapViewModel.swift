@@ -190,17 +190,6 @@ final class MapViewModel: NSObject {
     func connectionPublisher() -> CurrentValueSubject<Bool, Never> {
         manager.connectionStatusPublisher
     }
-    
-    //MARK: - Testing API
-    #if DEBUG
-    func simulateUserListEmit() {
-        manager.simulateUserListEmit()
-    }
-    
-    func simulateLocationUpdateEmit() {
-        manager.simulateLocationUpdateEmit()
-    }
-    #endif
 }
 
 

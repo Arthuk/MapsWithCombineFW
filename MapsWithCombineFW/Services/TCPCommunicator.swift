@@ -58,9 +58,7 @@ final class TCPCommunicator: NSObject, ConnectionProviding {
     func receiveFromStream(_ output: String) {
         if output.contains("USERLIST") {
             userListPublisher.send(output)
-        }
-        
-        if output.contains("UPDATE") {
+        } else if output.contains("UPDATE") {
             updatePublisher.send(output)
         }
     }
@@ -107,18 +105,3 @@ extension TCPCommunicator: StreamDelegate {
         }
     }
 }
-
-let testUserList = """
-USERLIST 101,Steve Jobs,https://image.cnbcfm.com/api/v1/image/104556423-steve-jobs-iphone-10-years.jpg,56.9495677035,24.1064071655;102,Elon  Mask,https://upload.wikimedia.org/wikipedia/commons/3/34/Elon_Musk_Royal_Society_%28crop2%29.jpg,56.9503693176,24.1084241867;\n
-"""
-
-let testUpdates: [String] = ["UPDATE 101,56.9495677035,24.1064071655\nUPDATE 102,56.95043368,24.1116642952\n",
-                             "UPDATE 101,56.9495677035,24.1064071655\nUPDATE 102,56.9499831407,24.111020565\n",
-                             "UPDATE 101,56.9495677035,24.1064071655\nUPDATE 102,56.9504453823,24.1101408005\n",
-                             "UPDATE 101,56.9495677035,24.1064071655\nUPDATE 102,56.9502698482,24.1093039513\n",
-                             "UPDATE 101,56.9495677035,24.1064071655\nUPDATE 102,56.9503634665,24.1084134579\n",
-                             "UPDATE 101,56.9495677035,24.1064071655\nUPDATE 102,56.9503693176,24.1084241867\n",
-                             "UPDATE 101,56.9495677035,24.1064071655\nUPDATE 102,56.9507203841,24.1086924076\n",
-                             "UPDATE 101,56.9495677035,24.1064071655\nUPDATE 102,56.9509602776,24.1089177132\n",
-                             "UPDATE 101,56.9495677035,24.1064071655\nUPDATE 102,56.9511299574,24.108928442\n",
-                             "UPDATE 101,56.9495677035,24.1064071655\nUPDATE 102,56.9513288914,24.1093254089\n"]

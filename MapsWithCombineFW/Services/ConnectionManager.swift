@@ -51,25 +51,4 @@ final class ConnectionManager {
     func userLocationUpdatesPublisher() -> PassthroughSubject<String, Never> {
         service.updatePublisher
     }
-    
-    #if DEBUG
-    //MARK: - Testing API
-    func simulateUserListEmit() {
-        service.userListPublisher.send(testUserList)
-    }
-    
-    func simulateLocationUpdateEmit() {
-        let delayPublisher = Timer.publish(every: 3, on: .main, in: .default).autoconnect()
-        let delayedValuesPublisher = Publishers.Zip(testUpdates.publisher, delayPublisher)
-        
-        delayedValuesPublisher
-            .map { [weak self] (update, delay) -> () in
-                self?.service.updatePublisher.send(update)
-            }
-            .sink { _ in
-                print("fire test update")
-            }
-            .store(in: &subscribers)
-    }
-    #endif
 }
